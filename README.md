@@ -1,4 +1,4 @@
-# Windows-BootKit
+# Windows-BootKit v1.4
 
 ## Description 
 A bootkit program that you can put on a wndows setup bootable usb key and run it from your key for change password , list user , dump sam base and more :)
@@ -18,6 +18,6 @@ A bootkit program that you can put on a wndows setup bootable usb key and run it
 3) Run "wmic logicaldisk get name" to list disk
 3) Run "[DRIVE_LETTER]:" to go in your disk
 5) Go to your git clone directory
-6) Run executable
+6) Run "start bootkit-v1.4.exe"
 7) Enjoy ;)
 
