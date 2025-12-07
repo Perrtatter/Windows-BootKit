@@ -1,3 +1,3 @@
 clear
-g++ main.cpp -o program.out 
+g++ ../main.cpp -o .././program.out 
 ./program.out
