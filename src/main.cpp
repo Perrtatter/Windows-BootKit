@@ -53,7 +53,12 @@ int main(){
     cout << "[" << red << "2" << reset << "] List user" << endl;
     cout << "[" << red << "3" << reset << "] Change password" << endl;
     cout << "[" << red << "4" << reset << "] Dump SAM base" << endl;
-
+    // Intercative shell 
+    // Download file in to usb key
+    // Upload file to the machine 
+    // Active WinRM
+    // Replace "sethc.exe" to "bootkit-v1.4.exe" 
+    // Run Powershell payload ( from keys )
 
     cout << "-------------------------------------" << endl;
     cout << "[" << red << "0" << reset << "] Save change ( exit with 'shutdown -h' )" << endl;
