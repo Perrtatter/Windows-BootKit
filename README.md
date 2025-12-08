@@ -1,7 +1,7 @@
-# Windows-BootKit v1.4
+# Windows-RootKit v1.4
 
 ## Description 
-A bootkit program that you can put on a wndows setup bootable usb key and run it from your key for change password , list user , dump sam base and more :)
+
 
 /!\ THE ONLY THING YOU CAN TO IN SETUP MODE IS "Replace sethc.exe to cmd.exe" ( but you can reboot , presse muli time SHIFT and reload script for use full features ) /!\
 
