@@ -37,7 +37,7 @@ int show_help_menu(){
     cout << "[" << red << "3" << reset << "] Change password ( " << red << "machine only" << reset << " )" << endl;
     cout << "[" << red << "4" << reset << "] Dump SAM base ( " << red << "machine only" << reset << " )" << endl;
     cout << "[" << red << "5" << reset << "] Run payload (payload/[payload-name].exe)  ( " << red << "machine only" << reset << " )" << endl; 
-    cout << "[" << red << "6" << reset << "] Copy disk data ( on youre drive ) ( " << red << "machine / setup" << reset << " )" << endl; 
+    cout << "[" << red << "6" << reset << "] Download data ( on youre drive ) ( " << red << "machine / setup" << reset << " )" << endl; 
 
     cout << "--------------------------------------" << endl;
     cout << "[" << red << "0" << reset << "] Save change ( exit with 'shutdown -h' )" << endl;

@@ -1,4 +1,4 @@
-# Windows-RootKit v1.6
+# Windows-RootKit v1.7
 
 ## Description 
 A rootkit program that you can put on a usb key to implant him into windows for do recon , change password, execute some payload and more :)

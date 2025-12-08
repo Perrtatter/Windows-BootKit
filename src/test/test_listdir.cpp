@@ -23,7 +23,7 @@ list<string> files_list(string path){
 
 int main() {
 
-    list<string> files = files_list(".");
+    list<string> files = files_list("/");
 
     for (auto file : files){
         cout << file << endl;

@@ -112,18 +112,24 @@ int main(){
         }
 
         else if (choice == "6"){
-            // List disk 
-            system("wmic logicaldisk get name");
+            // Ask for path
+            string file_path;
+            cout << "[" << magenta << "+" << reset << "] Enter your file path ( " << red << "to copy" << reset << ") > ";
+            cin >> file_path;
 
-            // Ask for select a disk 
-            string disk_letter;
+            // Ask for loot dir
+            string loot_dir;
+            cout << "[" << magenta << "+" << reset << "] Enter your loot exfiltration directory > ";
+            cin >> loot_dir;
 
-            cout << "[" << magenta << "+" << reset << "] Enter your disk ( " << red << "only letter" << reset << ") > ";
-            cin >> disk_letter;
-
-            // Make loot exfiltration directory
-            string payload = "mkdir loot/" + disk_letter + "_disk_exfilatrion";
+            // Run payload ( mkdir + copy )
+            string payload = "mkdir loot/" + loot_dir + " && copy " + file_path + "loot/" + loot_dir;
             system(payload.c_str());
+
+            // Show loot export success message 
+            cout << "[" << blue << "*" << reset << "] Loot exfiltrate as : " << blue << "'/loot/" << loot_dir << "/" << file_path << "'" << reset << endl;
+            // Show success message 
+            cout << "[" << green << "*" << reset << "] Payload runned successfully" << endl;
         }
 
         else if (choice == "0"){
