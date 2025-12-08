@@ -1,7 +1,7 @@
 # Windows-RootKit v1.4
 
 ## Description 
-
+A rootkit program that you can put on a wndows setup bootable usb key to implant him into windows for do recon , change password, execute some payload and more :)
 
 /!\ THE ONLY THING YOU CAN TO IN SETUP MODE IS "Replace sethc.exe to cmd.exe" ( but you can reboot , presse muli time SHIFT and reload script for use full features ) /!\
 
@@ -12,17 +12,6 @@
 
 2) Git clone this repository to your usb drive directory
 
-
-
-### Usage 
-1) Boot on your USB 
-2) Press SHIFT+F10 for open command prompt
-3) Run "wmic logicaldisk get name" to list disk
-3) Run "[DRIVE_LETTER]:" to go in your disk
-5) Go to your git clone directory
-6) Run "start bootkit-v1.4.exe"
-7) Enjoy ;)
-
 ### Exemple of usage 
 1) Boot on disk 
 2) Choose option "1"
@@ -31,7 +20,7 @@
 5) Run "wmic logicaldisk get name" to list disk
 6) Run "[DRIVE_LETTER]:" to go in your disk
 7) Go to your git clone directory
-8) Run "start bootkit-v1.4.exe"
-9) List users , change password and dump sam base 
+8) Reopen the rootkit executable
+9) List users , change password and more
 
 
