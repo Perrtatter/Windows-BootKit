@@ -7,14 +7,13 @@ using namespace termcolor;
 
 
 // Set variable 
-string banner = "-------------------------------------\n ______              _ _    _ _      \n(____  \\            | | |  / |_)_    \n ____)  ) ___   ___ | | | / / _| |_  \n|  __  ( / _ \\ / _ \\| | |< < | |  _) \n| |__)  ) |_| | |_| | | | \\ \\| | |__ \n|______/ \\___/ \\___/|_|_|  \\_)_|\\___)\n\nBy Perrtatter\nhttps://github.com/Perrtatter/Windows-BootKitn\n-------------------------------------";
+string banner = "--------------------------------------\n\n  ____             _   _  ___ _   \n |  _ \\ ___   ___ | |_| |/ (_) |_ \n | |_) / _ \\ / _ \\| __| ' /| | __|\n |  _ < (_) | (_) | |_| . \\| | |_ \n |_| \\_\\___/ \\___/ \\__|_|\\_\\_|\\__|\n                                  \nBy Perrtatter\nhttps://github.com/Perrtatter/Windows-RootKit\n--------------------------------------";
 string bin_path = "C:\\Windows\\System32";
 string choice;
 bool running = true;
 
 // Clear screen fonction
 int clear_screen(){
-
     // Run command
     system("cls");
 
@@ -35,7 +34,7 @@ int main(){
 
     if (choice == "y"){
         // Ask for change binary path
-        cout << "[" << magenta << "+" << reset << "] Enter your new binary path (" << magenta << "X:/xxxxx/xxxxxx" << reset << " ) > " ;
+        cout << "[" << magenta << "+" << reset << "] Enter your new binary path (" << magenta << "X:\\xxxxx\\xxxxxx" << reset << " ) > " ;
         cin >> bin_path ;
     }
 
@@ -49,18 +48,17 @@ int main(){
     cout << red << banner << reset << endl;
 
     // Print choice menu
-    cout << "[" << red << "1" << reset << "] Replace sethc.exe to cmd.exe" << endl;
-    cout << "[" << red << "2" << reset << "] List user" << endl;
-    cout << "[" << red << "3" << reset << "] Change password" << endl;
-    cout << "[" << red << "4" << reset << "] Dump SAM base" << endl;
+    cout << "[" << red << "1" << reset << "] Replace sethc.exe to cmd.exe ( " << red << "setup only" << reset << " )" << endl;
+    cout << "[" << red << "2" << reset << "] List user ( " << red << "machine only" << reset << " )" << endl;
+    cout << "[" << red << "3" << reset << "] Change password ( " << red << "machine only" << reset << " )" << endl;
+    cout << "[" << red << "4" << reset << "] Dump SAM base ( " << red << "machine only" << reset << " )" << endl;
     // Intercative shell 
     // Download file in to usb key
     // Upload file to the machine 
     // Active WinRM
     // Replace "sethc.exe" to "bootkit-v1.4.exe" 
     // Run Powershell payload ( from keys )
-
-    cout << "-------------------------------------" << endl;
+    cout << "--------------------------------------" << endl;
     cout << "[" << red << "0" << reset << "] Save change ( exit with 'shutdown -h' )" << endl;
 
     // Jump line 
