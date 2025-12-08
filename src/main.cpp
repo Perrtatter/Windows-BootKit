@@ -1,4 +1,5 @@
 // Import library/module
+#include <cstdlib>
 #include <iostream>
 #include "module/termcolor.hpp"
 // Set namespaces
@@ -21,11 +22,37 @@ int clear_screen(){
     return 0;
 };
 
+// Show banner fonction
+int show_banner(){
+    // Print banner
+    cout << red << banner << reset << endl;
+
+    // Return 0 , cause is a int loop
+    return 0;
+};
+
+int show_help_menu(){
+    // Print help menu
+    cout << "[" << red << "1" << reset << "] Replace sethc.exe to cmd.exe ( " << red << "setup only" << reset << " )" << endl;
+    cout << "[" << red << "2" << reset << "] List user ( " << red << "machine only" << reset << " )" << endl;
+    cout << "[" << red << "3" << reset << "] Change password ( " << red << "machine only" << reset << " )" << endl;
+    cout << "[" << red << "4" << reset << "] Dump SAM base ( " << red << "machine only" << reset << " )" << endl;
+    cout << "[" << red << "5" << reset << "] Run payload (payload/[payload-name].exe)  ( " << red << "machine only" << reset << " )" << endl; 
+    cout << "--------------------------------------" << endl;
+    cout << "[" << red << "0" << reset << "] Save change ( exit with 'shutdown -h' )" << endl;
+    cout << "[" << red << "99" << reset << "] Clear Screen" << endl;
+
+    cout << endl;
+
+    // Return 0 , cause is a int loop
+    return 0;
+};
+
 // Main loop
 int main(){
 
     // Print banner
-	cout << red << banner << reset << endl;
+	show_banner();
 
     // Ask for change binary path
     cout << "[" << yellow << "!" << reset << "] Bin path is : " << yellow << bin_path << reset << ", would you change it (y/n) > ";
@@ -43,26 +70,10 @@ int main(){
         ;
     }
     
-    // Clear terminal and reprint banner
+    // Clear terminal and reprint banner + help menu
     clear_screen();
-    cout << red << banner << reset << endl;
-
-    // Print choice menu
-    cout << "[" << red << "1" << reset << "] Replace sethc.exe to cmd.exe ( " << red << "setup only" << reset << " )" << endl;
-    cout << "[" << red << "2" << reset << "] List user ( " << red << "machine only" << reset << " )" << endl;
-    cout << "[" << red << "3" << reset << "] Change password ( " << red << "machine only" << reset << " )" << endl;
-    cout << "[" << red << "4" << reset << "] Dump SAM base ( " << red << "machine only" << reset << " )" << endl;
-    // Intercative shell 
-    // Download file in to usb key
-    // Upload file to the machine 
-    // Active WinRM
-    // Replace "sethc.exe" to "bootkit-v1.4.exe" 
-    // Run Powershell payload ( from keys )
-    cout << "--------------------------------------" << endl;
-    cout << "[" << red << "0" << reset << "] Save change ( exit with 'shutdown -h' )" << endl;
-
-    // Jump line 
-    cout << endl;
+    show_banner();
+    show_help_menu();
 
     while (running){
         // Choice option
@@ -116,9 +127,36 @@ int main(){
             cout << "[" << green << "*" << reset << "] Payload runned successfully" << endl;
         }
 
+        else if (choice == "5"){
+            // List payload
+            cout << "--------------------------------------" << endl;
+            system("dir payload");
+            cout << "--------------------------------------" << endl;
+
+            // Ask for payload
+            string payload_arguments;
+            cout << "[" << magenta << "+" << reset << "] Enter your payload arguments ( [payload-name].exe [arguments] ) > ";
+            cin >> payload_arguments;
+
+            // Run payload
+            string payload = "start /b " + payload_arguments;
+            system(payload.c_str());
+
+            // Show success message 
+            cout << "[" << green << "*" << reset << "] Payload runned successfully" << endl;
+        }
+
         else if (choice == "0"){
             // Stop running
             running = false;
+        }
+
+        else if (choice == "99") {
+            // Clear terminal and reprint banner + help menu
+            clear_screen();
+            show_banner();
+            show_help_menu();
+        
         }
 
         else {
