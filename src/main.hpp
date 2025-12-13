@@ -1,13 +1,15 @@
 // Import library/module
+#include <algorithm>
 #include <iostream>
 #include "module/termcolor.hpp"
+#include <list>
 // Set namespaces
 using namespace std;
 using namespace termcolor;
 
 
 // Set variable 
-string banner = "--------------------------------------\n\n  ____             _   _  ___ _   \n |  _ \\ ___   ___ | |_| |/ (_) |_ \n | |_) / _ \\ / _ \\| __| ' /| | __|\n |  _ < (_) | (_) | |_| . \\| | |_ \n |_| \\_\\___/ \\___/ \\__|_|\\_\\_|\\__|\n                                  \nBy Perrtatter\nhttps://github.com/Perrtatter/Windows-RootKit\n--------------------------------------";
+string banner = "--------------------------------------\n\n  ____             _   _  ___ _   \n |  _ \\ ___   ___ | |_| |/ (_) |_ \n | |_) / _ \\ / _ \\| __| ' /| | __|\n |  _ < (_) | (_) | |_| . \\| | |_ \n |_| \\_\\___/ \\___/ \\__|_|\\_\\_|\\__| v1.7\n                                  \nBy Perrtatter\nhttps://github.com/Perrtatter/Windows-RootKit\n--------------------------------------";
 
 
 // Clear screen fonction
@@ -46,5 +48,15 @@ int show_help_menu(){
     cout << endl;
 
     // Return 0 , cause is a int loop
+    return 0;
+};
+
+
+int is_verbose_mode(list<string> args){
+
+    for (auto arg : args){
+        cout << arg << endl ;
+    }
+
     return 0;
 };

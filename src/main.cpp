@@ -14,7 +14,7 @@ string choice;
 bool running = true;
 
 // Main loop
-int main(){
+int main(int argc,char *argv[]){
 
     // Print banner
 	show_banner();
@@ -104,7 +104,7 @@ int main(){
             cin >> payload_arguments;
 
             // Run payload
-            string payload = "start /b " + payload_arguments;
+            string payload = "start /b payload/" + payload_arguments;
             system(payload.c_str());
 
             // Show success message 
@@ -123,7 +123,7 @@ int main(){
             cin >> loot_dir;
 
             // Run payload ( mkdir + copy )
-            string payload = "mkdir loot/" + loot_dir + " && copy " + file_path + "loot/" + loot_dir;
+            string payload = "mkdir loot/" + loot_dir + " && copy " + file_path + " loot/" + loot_dir;
             system(payload.c_str());
 
             // Show loot export success message 
